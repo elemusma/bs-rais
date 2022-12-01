@@ -112,17 +112,25 @@ echo '<div class="diagonal-left-line two position-absolute bg-accent-secondary" 
 // echo '<div class="diagonal-bottom-left bg-accent-teal"></div>';
 // echo '<div class="diagonal-bottom-right bg-accent-teal"></div>';
 
-echo '<div class="diagonal-bottom-left bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 79.3333px);"></div>';
-echo '<div class="diagonal-bottom-right bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 79.3333px);"></div>';
+echo '<div class="diagonal-bottom-left bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 73.50px);"></div>';
+echo '<div class="diagonal-bottom-right bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 73.50px);"></div>';
 
 // echo '<div class="text-white hero-content position-relative z-1 d-flex" style="">';
 // echo '<h6>' . get_the_field('pretitle') . '</h6>';
 echo '<div class="d-flex align-items-center position-relative z-2" style="min-height:100vh;">';
-echo '<div class="hero-content p-5 col-md-6">';
-    echo '<h6 class="text-accent-tertiary text-uppercase">where innovation meets impact</h6>';
-    echo '<h1 class="text-white bold" style=""><span class="text-accent-secondary">All-in-one</span> strategy and technology <span class="text-accent-secondary">solution</span></h1>';
+echo '<div class="hero-content p-5">';
+
+echo '<div class="col-lg-6">';
+echo '<h6 class="text-accent-tertiary text-uppercase">where innovation meets impact</h6>';
+echo '<h1 class="text-white bold" style=""><span class="text-accent-secondary">All-in-one</span> strategy and technology <span class="text-accent-secondary">solution</span></h1>';
+echo '</div>';
+
+    echo '<div class="col-lg-4 col-md-9">';
     echo '<p class="text-white lead">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to bring solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
+    // echo '<div class="col-md-9">';
     echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
+    // echo '</div>';
+    echo '</div>';
 echo '</div>';
 echo '</div>';
 
