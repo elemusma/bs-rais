@@ -26,15 +26,26 @@ echo '<header class="position-relative pt-3 pb-3 z-3 box-shadow bg-white w-100" 
 echo '<div class="nav">';
 echo '<div class="container">';
 echo '<div class="row align-items-center">';
-echo '<div class="col-lg-3 col-md-6">';
-echo '<a href="' . home_url() . '">';
 
-$logo = get_field('logo','options'); 
-if($logo){
-echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto']); 
-}
+echo '<div class="col-md-3">';
+    echo '<a href="' . home_url() . '">';
 
-echo '</a>';
+    $logo = get_field('logo','options'); 
+    if($logo){
+        echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto']);
+    }
+
+    echo wp_get_attachment_image(128,'full','',['class'=>'position-absolute h-100 w-auto','style'=>'top:0;left:25px;opacity:0;','id'=>'logoIcon']);
+
+    echo '</a>';
+echo '</div>';
+
+
+echo '<div class="col-lg-9 col-md-6 col-7 text-right mobile-hidden">';
+wp_nav_menu(array(
+'menu' => 'Main Menu',
+'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-end mb-0'
+));
 echo '</div>';
 echo '<div class="col-lg-4 col-6 desktop-hidden">';
 echo '<a id="navToggle" class="nav-toggle">';
@@ -74,35 +85,70 @@ echo '</div>';
 
 echo '</header>';
 
-echo '<section class="hero position-relative">';
-$globalPlaceholderImg = get_field('global_placeholder_image','options');
-if(is_page()){
-if(has_post_thumbnail()){
-the_post_thumbnail('full', array('class' => 'w-100 h-100 bg-img position-absolute'));
-} else {
-echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
-}
-} else {
-echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
-}
-
+echo '<section class="hero position-relative" style="height:600px;">';
+// $globalPlaceholderImg = get_field('global_placeholder_image','options');
+// if(is_page()){
+// if(has_post_thumbnail()){
+// the_post_thumbnail('full', array('class' => 'w-100 h-100 bg-img position-absolute'));
+// } else {
+// echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
+// }
+// } else {
+// echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
+// }
 
 if(is_front_page()) {
-echo '<div class="pt-5 pb-5 text-white text-center">';
-echo '<div class="position-relative">';
-echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
-echo '<div class="position-relative">';
-echo '<div class="container">';
-echo '<div class="row">';
-echo '<div class="col-12">';
-echo '<h1 class="pt-3 pb-3 mb-0">' . get_the_title() . '</h1>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
+    echo '<video controls playsinline autoplay loop muted class="w-100 h-100 position-absolute" style="top:0;left:0;object-fit:cover;" src="' . home_url() . '/wp-content/themes/brownsurfing/assets/Rais3-Video.mp4#t=0.5"></video>';
 }
+
+
+// echo '<div class="text-white hero-content position-relative z-1 d-flex" style="">';
+// echo '<h6>' . get_the_field('pretitle') . '</h6>';
+echo '<div class="h-100 d-flex align-items-center position-relative">';
+echo '<div class="hero-content p-5">';
+    echo '<h1 class="text-white bold" style="">' . get_the_title() . '</h1>';
+echo '</div>';
+echo '</div>';
+
+echo '<div class="position-absolute z-1 d-inline-block" style="top:0;">';
+echo '<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1743.91 1967.29" style="height:600px;top:0;right:0;">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="983.64" x2="1290.73" y2="983.64" gradientUnits="userSpaceOnUse">
+      <stop offset=".12" stop-color="#2b54fc"/>
+      <stop offset=".86" stop-color="#0b8ffc"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="453.22" x2="1743.91" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Layer_2-2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1-2">
+        <polygon class="cls-1" points="0 0 954.12 980.62 0 1967.29 326 1967.29 1290.73 983.63 339.23 0 0 0"/>
+        <polygon class="cls-2" points="453.22 0 1407.34 980.62 453.22 1967.29 779.19 1967.29 1743.91 983.63 792.45 0 453.22 0"/>
+      </g>
+    </g>
+  </g>
+</svg>';
+echo '</div>';
+
+// echo '</div>';
+// $backgroundImage = get_field('background_image');
+// echo '<div class="el" id="elDiv" style="pointer-events:none;background:url(' . wp_get_attachment_image_url($backgroundImage['id'],'full') . ');background-position:35% 25%;"></div>';
+
+// echo '<div class="diagonal-left-line three bg-accent-orange"></div>';
+// echo '<div class="diagonal-bottom-left bg-accent-teal"></div>';
+// echo '<div class="diagonal-bottom-right bg-accent-teal"></div>';
+
+
 
 
 

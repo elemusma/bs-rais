@@ -1,6 +1,6 @@
 <?php
 
-function done_right_signs_stylesheets() {
+function rais_stylesheets() {
 wp_enqueue_style('style', get_stylesheet_uri() );
 
 wp_enqueue_style('bootstrap', get_theme_file_uri('/css/bootstrap.min.css'));
@@ -37,9 +37,9 @@ wp_enqueue_style('blair-itc', get_theme_file_uri('/blair-itc/blair-itc.css'));
 wp_enqueue_style('aspira', get_theme_file_uri('/aspira-font/aspira-font.css'));
 
 }
-add_action('wp_enqueue_scripts', 'done_right_signs_stylesheets');
+add_action('wp_enqueue_scripts', 'rais_stylesheets');
 // for footer
-function done_right_signs_stylesheets_footer() {
+function rais_stylesheets_footer() {
 	// wp_enqueue_style('style-footer', get_theme_file_uri('/css/style-footer.css'));
 	// owl carousel
 	wp_enqueue_style('owl.carousel.min', get_theme_file_uri('/owl-carousel/owl.carousel.min.css'));
@@ -69,13 +69,17 @@ function done_right_signs_stylesheets_footer() {
     // general
 	wp_enqueue_script('nav-js', get_theme_file_uri('/js/nav.js'));
 	wp_enqueue_script('popup-js', get_theme_file_uri('/js/popup.js'));
+	wp_enqueue_script('logo-js', get_theme_file_uri('/js/logo.js'));
 	
 	if(is_single()){
 		wp_enqueue_script('blog-js', get_theme_file_uri('/js/blog.js'));
 		}
+	if(is_front_page()){
+		wp_enqueue_script('home-js', get_theme_file_uri('/js/home.js'));
+		}
 	}
 	
-add_action('get_footer', 'done_right_signs_stylesheets_footer');
+add_action('get_footer', 'rais_stylesheets_footer');
 
 // loads enqueued javascript files deferred
 function mind_defer_scripts( $tag, $handle, $src ) {
@@ -99,7 +103,7 @@ function mind_defer_scripts( $tag, $handle, $src ) {
   } 
   add_filter( 'script_loader_tag', 'mind_defer_scripts', 10, 3 );
 
-function done_right_signs_menus() {
+function rais_menus() {
  register_nav_menus( array(
    'primary' => __( 'Primary' )));
 register_nav_menus( array(
@@ -109,7 +113,7 @@ register_nav_menus( array(
  add_theme_support('post-thumbnails');
 }
 
-add_action('after_setup_theme', 'done_right_signs_menus');
+add_action('after_setup_theme', 'rais_menus');
 
 if( function_exists('acf_add_options_page') ) {
 
@@ -127,7 +131,7 @@ function smartwp_remove_wp_block_library_css(){
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 
 // add_filter('comment_form_default_fields', 'remove_website_field_from_comment_form');
 function remove_website_field_from_comment_form($fields)
