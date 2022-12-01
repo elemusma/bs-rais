@@ -80,3 +80,8 @@ strong {
 blockquote {
   font-size: 90%;
 }
+
+h1,
+.h1 {
+  font-size: 60px;
+}

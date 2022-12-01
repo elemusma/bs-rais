@@ -1,4 +1,4 @@
-.img-hero {
+/* .img-hero {
     min-height: 300px;
     height: 85vh;
     object-fit: cover;
@@ -6,4 +6,108 @@
 body:not(.home) .img-hero {
     min-height: 200px;
     height: 30vh;
+} */
+
+.hero-content {
+    opacity: 1;
+    animation: showContent 2s linear;
+}
+
+#Layer_2 {
+    animation: arrowAnimation 2s linear;
+    transform: translate(65vw, 0px);
+}
+
+@keyframes arrowAnimation {
+    0% {
+        transform: translate(0vw, 0px);
+    }
+
+    100% {
+        transform: translate(65vw, 0px);
+    }
+}
+
+@keyframes showContent {
+    0% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.diagonal-left-line {
+    width: 2px;
+    height: 100px;
+    /* background: #e95950; */
+    transform: rotate(-45deg);
+    left: 20%;
+}
+
+.diagonal-left-line.two {
+    height: 125px;
+    left: 25%;
+    /* background: #bc2a8d; */
+}
+
+.diagonal-left-line.three {
+    height: 125px;
+    left: -15%;
+    transform: rotate(45deg);
+    position: absolute;
+    transform: rotate(45deg) translate(0, -290px);
+    /* background:#bc2a8d; */
+}
+
+.diagonal-bottom-left {
+    height: 150px;
+    width: 250px;
+    opacity: .5;
+    /* background: #bc2a8d; */
+    position: absolute;
+    bottom: 0;
+    left: -6.5%;
+    clip-path: polygon(58% 0%, 100% 0%, 42% 100%, 0% 100%);
+    -webkit-clip-path: polygon(58% 0%, 100% 0%, 42% 100%, 0% 100%);
+    -ms-clip-path: polygon(58% 0%, 100% 0%, 42% 100%, 0% 100%);
+    -moz-clip-path: polygon(58% 0%, 100% 0%, 42% 100%, 0% 100%);
+    -o-clip-path: polygon(58% 0%, 100% 0%, 42% 100%, 0% 100%);
+    transform: rotate(0deg) translate(100px, 0px);
+}
+
+.diagonal-bottom-right {
+    height: 150px;
+    width: 165px;
+    opacity: .5;
+    /* background: #bc2a8d; */
+    position: absolute;
+    bottom: 0;
+    left: 2.5%;
+    clip-path: polygon(80.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    -webkit-clip-path: polygon(85.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    -ms-clip-path: polygon(80.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    -moz-clip-path: polygon(80.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    -o-clip-path: polygon(80.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    transform: rotate(0deg) translate(100px, 0px);
+}
+
+.diagonal-line-left {
+    height: 150px;
+    width: 165px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    clip-path: polygon(80.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    -webkit-clip-path: polygon(85.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    -ms-clip-path: polygon(80.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    -moz-clip-path: polygon(80.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    -o-clip-path: polygon(80.5% 0%, 100% 0%, 19.5% 100%, 0% 100%);
+    transform: rotate(0deg) translate(100px, 0px);
 }

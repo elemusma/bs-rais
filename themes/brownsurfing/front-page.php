@@ -1,5 +1,7 @@
-<?php get_header();
+<?php 
+get_header();
 
+if(is_user_logged_in()){
 // start of intro
 echo '<section class="pt-5 pb-5 position-relative">';
 echo '<div class="container">';
@@ -13,6 +15,7 @@ echo '</div>';
 echo '</div>';
 echo '</section>';
 // end of intro
+}
 
 
 // how to use new image hover effect

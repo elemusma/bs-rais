@@ -20,6 +20,7 @@ wp_head();
 <body <?php body_class(); ?>>
 <?php
 if(get_field('body','options')) { the_field('body','options'); }
+if(is_user_logged_in()){
 echo '<div class="blank-space"></div>';
 echo '<header class="position-relative pt-3 pb-3 z-3 box-shadow bg-white w-100" style="top:0;left:0;">';
 
@@ -84,8 +85,9 @@ echo '</div>';
 echo '</div>';
 
 echo '</header>';
+}
 
-echo '<section class="hero position-relative" style="height:600px;">';
+echo '<section class="hero position-relative pt-5 pb-5 overflow-h" style="min-height:100vh;">';
 // $globalPlaceholderImg = get_field('global_placeholder_image','options');
 // if(is_page()){
 // if(has_post_thumbnail()){
@@ -98,21 +100,36 @@ echo '<section class="hero position-relative" style="height:600px;">';
 // }
 
 if(is_front_page()) {
-    echo '<video controls playsinline autoplay loop muted class="w-100 h-100 position-absolute" style="top:0;left:0;object-fit:cover;" src="' . home_url() . '/wp-content/themes/brownsurfing/assets/Rais3-Video.mp4#t=0.5"></video>';
+    echo '<video playsinline autoplay loop muted class="w-100 h-100 position-absolute" style="top:0;left:0;object-fit:cover;" src="' . home_url() . '/wp-content/themes/brownsurfing/assets/Rais3-Video.mp4#t=0.5"></video>';
 }
 
+echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.25;top:0;left:0;"></div>';
+
+echo '<div class="diagonal-left-line position-absolute bg-accent-secondary" style="top:90px;"></div>';
+echo '<div class="diagonal-left-line two position-absolute bg-accent-secondary" style="top:90px;"></div>';
+
+// echo '<div class="diagonal-left-line three bg-accent-orange"></div>';
+// echo '<div class="diagonal-bottom-left bg-accent-teal"></div>';
+// echo '<div class="diagonal-bottom-right bg-accent-teal"></div>';
+
+echo '<div class="diagonal-bottom-left bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 79.3333px);"></div>';
+echo '<div class="diagonal-bottom-right bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 79.3333px);"></div>';
 
 // echo '<div class="text-white hero-content position-relative z-1 d-flex" style="">';
 // echo '<h6>' . get_the_field('pretitle') . '</h6>';
-echo '<div class="h-100 d-flex align-items-center position-relative">';
-echo '<div class="hero-content p-5">';
-    echo '<h1 class="text-white bold" style="">' . get_the_title() . '</h1>';
+echo '<div class="d-flex align-items-center position-relative z-2" style="min-height:100vh;">';
+echo '<div class="hero-content p-5 col-md-6">';
+    echo '<h6 class="text-accent-tertiary text-uppercase">where innovation meets impact</h6>';
+    echo '<h1 class="text-white bold" style=""><span class="text-accent-secondary">All-in-one</span> strategy and technology <span class="text-accent-secondary">solution</span></h1>';
+    echo '<p class="text-white lead">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to bring solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
+    echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
 echo '</div>';
 echo '</div>';
 
-echo '<div class="position-absolute z-1 d-inline-block" style="top:0;">';
+
+echo '<div class="position-absolute z-1 d-inline-block" style="top:50%;transform:translate(0px, -50%);">';
 echo '<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1743.91 1967.29" style="height:600px;top:0;right:0;">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1743.91 1967.29" style="height:500px;top:50px;right:0;">
   <defs>
     <style>
       .cls-1 {
@@ -143,10 +160,6 @@ echo '</div>';
 // echo '</div>';
 // $backgroundImage = get_field('background_image');
 // echo '<div class="el" id="elDiv" style="pointer-events:none;background:url(' . wp_get_attachment_image_url($backgroundImage['id'],'full') . ');background-position:35% 25%;"></div>';
-
-// echo '<div class="diagonal-left-line three bg-accent-orange"></div>';
-// echo '<div class="diagonal-bottom-left bg-accent-teal"></div>';
-// echo '<div class="diagonal-bottom-right bg-accent-teal"></div>';
 
 
 

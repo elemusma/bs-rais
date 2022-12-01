@@ -1,6 +1,8 @@
 :root {
   --accent-primary: #2859FC;
-  --accent-secondary: #182236;
+  --accent-secondary: #F49D37;
+  --accent-tertiary: #ABE188;
+  --accent-blue-light: #0C8EFC;
 }
 
 html {
@@ -29,6 +31,10 @@ body.nav-open {
   background: var(--accent-primary);
 }
 
+.bg-accent-blue-light {
+  background: var(--accent-blue-light);
+}
+
 a.bg-accent:hover {
   background: var(--accent-secondary);
 }
@@ -38,6 +44,14 @@ a.bg-accent:hover {
 }
 
 a.bg-accent-secondary:hover {
+  background: var(--accent-primary);
+}
+
+.bg-accent-tertiary {
+  background: var(--accent-tertiary);
+}
+
+a.bg-accent-tertiary:hover {
   background: var(--accent-primary);
 }
 
