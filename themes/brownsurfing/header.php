@@ -105,8 +105,8 @@ if(is_front_page()) {
 
 echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.25;top:0;left:0;"></div>';
 
-echo '<div class="diagonal-left-line position-absolute bg-accent-secondary" style="top:90px;"></div>';
-echo '<div class="diagonal-left-line two position-absolute bg-accent-secondary" style="top:90px;"></div>';
+echo '<div class="diagonal-left-line position-absolute bg-accent-secondary" style="top:0px;"></div>';
+echo '<div class="diagonal-left-line two position-absolute bg-accent-secondary" style="top:0px;"></div>';
 
 // echo '<div class="diagonal-left-line three bg-accent-orange"></div>';
 // echo '<div class="diagonal-bottom-left bg-accent-teal"></div>';
