@@ -45,7 +45,7 @@ echo '</div>';
 echo '<div class="col-lg-9 col-md-6 col-7 text-right mobile-hidden">';
 wp_nav_menu(array(
 'menu' => 'Main Menu',
-'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-end mb-0'
+'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-end mb-0 text-white'
 ));
 echo '</div>';
 echo '<div class="col-lg-4 col-6 desktop-hidden">';
@@ -99,9 +99,11 @@ echo '<section class="hero position-relative pt-5 pb-5 overflow-h" style="min-he
 // echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
 // }
 
-if(is_front_page()) {
-    echo '<video playsinline autoplay loop muted class="w-100 h-100 position-absolute" style="top:0;left:0;object-fit:cover;" src="' . home_url() . '/wp-content/themes/brownsurfing/assets/Rais3-Video.mp4#t=0.5"></video>';
-}
+// if(is_front_page()) {
+    // echo '<video playsinline autoplay loop muted class="w-100 h-100 position-absolute" style="top:0;left:0;object-fit:cover;" src="' . home_url() . '/wp-content/themes/brownsurfing/assets/Rais3-Video.mp4#t=0.5"></video>';
+// }
+
+echo '<div class="position-absolute w-100 h-100" style="background:#0a003b;top:0;left:0;"></div>';
 
 echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.25;top:0;left:0;"></div>';
 
@@ -121,14 +123,32 @@ echo '<div class="d-flex align-items-center position-relative z-2" style="min-he
 echo '<div class="hero-content p-5">';
 
 echo '<div class="col-lg-6">';
-echo '<h6 class="text-accent-tertiary text-uppercase">where innovation meets impact</h6>';
-echo '<h1 class="text-white bold" style=""><span class="text-accent-secondary">All-in-one</span> strategy and technology <span class="text-accent-secondary">solution</span></h1>';
+$logo = get_field('logo','options'); 
+    if($logo){
+        echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
+    }
+    echo '<h1 class="text-white bold" style="">Strategy and<br>Technology Solution</h1>';
+    echo '<h6 class="text-accent-tertiary text-uppercase">where innovation meets impact</h6>';
 echo '</div>';
 
-    echo '<div class="col-lg-4 col-md-9">';
+    echo '<div class="col-lg-6 col-md-9">';
     echo '<p class="text-white lead">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to bring solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
     // echo '<div class="col-md-9">';
+    echo '<span class="btn bg-white text-accent contact-us open-modal" id="contact-us" style="">Send Us a Message</span>';
+    echo '<div class="modal-content contact-us position-fixed w-100 h-100 z-3">';
+    echo '<div class="bg-overlay"></div>';
+    echo '<div class="bg-content">';
+    echo '<div class="bg-content-inner">';
+    echo '<div class="close" id="">X</div>';
+    echo '<div>';
+    echo '<h2>Contact Us</h2>';
     echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
+    echo '</div>';
+    echo '</div>';
+
+    echo '</div>';
+    echo '</div>';
+    // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
     // echo '</div>';
     echo '</div>';
 echo '</div>';
