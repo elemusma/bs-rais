@@ -154,10 +154,12 @@ echo '</div>';
 echo '</div>';
 echo '</div>';
 
+// style="height:500px;top:50px;right:0;"
+// Layer_2
 
 echo '<div class="position-absolute z-1 d-inline-block" style="top:50%;transform:translate(0px, -50%);">';
 echo '<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1743.91 1967.29" style="height:500px;top:50px;right:0;">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 702.2 628.75" style="height:500px;top:50px;right:0;">
   <defs>
     <style>
       .cls-1 {
@@ -165,20 +167,38 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
       }
 
       .cls-2 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-4 {
         fill: url(#linear-gradient-2);
       }
     </style>
-    <linearGradient id="linear-gradient" x1="0" y1="983.64" x2="1290.73" y2="983.64" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient" x1="144.84" y1="314.38" x2="557.36" y2="314.38" gradientUnits="userSpaceOnUse">
       <stop offset=".12" stop-color="#2b54fc"/>
       <stop offset=".86" stop-color="#0b8ffc"/>
     </linearGradient>
-    <linearGradient id="linear-gradient-2" x1="453.22" x2="1743.91" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-2" x1="289.69" x2="702.2" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0" x2="412.52" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="144.85" xlink:href="#linear-gradient"/>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
-    <g id="Layer_2-2" data-name="Layer 2">
-      <g id="Layer_1-2" data-name="Layer 1-2">
-        <polygon class="cls-1" points="0 0 954.12 980.62 0 1967.29 326 1967.29 1290.73 983.63 339.23 0 0 0"/>
-        <polygon class="cls-2" points="453.22 0 1407.34 980.62 453.22 1967.29 779.19 1967.29 1743.91 983.63 792.45 0 453.22 0"/>
+    <g>
+      <g id="Layer_2-2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1-2">
+          <polygon class="cls-1" points="144.84 0 449.78 313.41 144.84 628.75 249.03 628.75 557.36 314.37 253.26 0 144.84 0"/>
+          <polygon class="cls-4" points="289.69 0 594.63 313.41 289.69 628.75 393.87 628.75 702.2 314.37 398.11 0 289.69 0"/>
+        </g>
+      </g>
+      <g id="Layer_2-3" data-name="Layer 2">
+        <g id="Layer_1-2-2" data-name="Layer 1-2">
+          <polygon class="cls-2" points="0 0 304.94 313.41 0 628.75 104.19 628.75 412.52 314.37 108.42 0 0 0"/>
+          <polygon class="cls-3" points="144.85 0 449.79 313.41 144.85 628.75 249.03 628.75 557.36 314.37 253.27 0 144.85 0"/>
+        </g>
       </g>
     </g>
   </g>
