@@ -120,7 +120,7 @@ echo '<div class="diagonal-bottom-right bg-accent-secondary" style="transform: r
 // echo '<div class="text-white hero-content position-relative z-1 d-flex" style="">';
 // echo '<h6>' . get_the_field('pretitle') . '</h6>';
 echo '<div class="d-flex align-items-center position-relative z-2" style="min-height:100vh;">';
-echo '<div class="hero-content p-5">';
+echo '<div class="hero-content p-md-5 p-3">';
 
 echo '<div class="col-lg-6">';
 $logo = get_field('logo','options'); 
