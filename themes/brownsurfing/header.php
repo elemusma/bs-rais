@@ -127,7 +127,7 @@ $logo = get_field('logo','options');
     if($logo){
         echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
     }
-    echo '<h1 class="text-white bold" style="">Strategy and<br>Technology Solution</h1>';
+    echo '<h1 class="text-white bold s" style="">Strategy and<br>Technology Solution</h1>';
     echo '<h6 class="text-accent-tertiary text-uppercase">where innovation meets impact</h6>';
 echo '</div>';
 
