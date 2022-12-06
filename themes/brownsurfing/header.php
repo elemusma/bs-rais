@@ -22,10 +22,10 @@ wp_head();
 if(get_field('body','options')) { the_field('body','options'); }
 if(is_user_logged_in()){
 echo '<div class="blank-space"></div>';
-echo '<header class="position-relative pt-3 pb-3 z-3 box-shadow bg-white w-100" style="top:0;left:0;">';
+echo '<header class="position-relative pt-3 pb-3 z-3 w-100 bg-accent-blue-dark" style="top:0;left:0;">';
 
 echo '<div class="nav">';
-echo '<div class="container">';
+echo '<div class="container-fluid">';
 echo '<div class="row align-items-center">';
 
 echo '<div class="col-md-3">';
@@ -42,12 +42,12 @@ echo '<div class="col-md-3">';
 echo '</div>';
 
 
-echo '<div class="col-lg-9 col-md-6 col-7 text-right mobile-hidden">';
-wp_nav_menu(array(
-'menu' => 'Main Menu',
-'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-end mb-0 text-white'
-));
-echo '</div>';
+// echo '<div class="col-lg-9 col-md-6 col-7 text-right mobile-hidden">';
+// wp_nav_menu(array(
+// 'menu' => 'Main Menu',
+// 'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-end mb-0 text-white'
+// ));
+// echo '</div>';
 echo '<div class="col-lg-4 col-6 desktop-hidden">';
 echo '<a id="navToggle" class="nav-toggle">';
 echo '<div>';
@@ -57,29 +57,29 @@ echo '<div class="line-3 bg-accent"></div>';
 echo '</div>';
 echo '</a>';
 echo '</div>';
-echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
-echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id="navItems">';
+// echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
+// echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id="navItems">';
 
-echo '<div class="pt-5 pb-5">';
-echo '<div class="close-menu">';
-echo '<div>';
-echo '<span id="navMenuClose" class="close h1">X</span>';
-echo '</div>';
-echo '</div>';
-echo '<a href="' . home_url() . '">';
+// echo '<div class="pt-5 pb-5">';
+// echo '<div class="close-menu">';
+// echo '<div>';
+// echo '<span id="navMenuClose" class="close h1">X</span>';
+// echo '</div>';
+// echo '</div>';
+// echo '<a href="' . home_url() . '">';
 
-$logo = get_field('logo','options'); 
-if($logo){
-echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
-}
+// $logo = get_field('logo','options'); 
+// if($logo){
+// echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
+// }
 
-echo '</a>';
-echo '</div>';
-wp_nav_menu(array(
-'menu' => 'primary',
-'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
-)); 
-echo '</div>';
+// echo '</a>';
+// echo '</div>';
+// wp_nav_menu(array(
+// 'menu' => 'primary',
+// 'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
+// )); 
+// echo '</div>';
 echo '</div>';
 echo '</div>';
 echo '</div>';
@@ -105,7 +105,7 @@ echo '<section class="hero position-relative pt-5 pb-5 overflow-h" style="min-he
 
 echo '<div class="position-absolute w-100 h-100" style="background:#0a003b;top:0;left:0;"></div>';
 
-echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.25;top:0;left:0;"></div>';
+// echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.25;top:0;left:0;"></div>';
 
 echo '<div class="diagonal-left-line position-absolute bg-accent-secondary" style="top:0px;"></div>';
 echo '<div class="diagonal-left-line two position-absolute bg-accent-secondary" style="top:0px;"></div>';
@@ -119,22 +119,34 @@ echo '<div class="diagonal-bottom-right bg-accent-secondary" style="transform: r
 
 // echo '<div class="text-white hero-content position-relative z-1 d-flex" style="">';
 // echo '<h6>' . get_the_field('pretitle') . '</h6>';
-echo '<div class="d-flex align-items-center position-relative z-2" style="min-height:100vh;">';
-echo '<div class="hero-content p-md-5 p-3">';
+echo '<div class="d-flex align-items-center position-relative z-2" style="">';
+echo '<div class="hero-content">';
 
-echo '<div class="col-lg-6">';
-$logo = get_field('logo','options'); 
+echo '<div class="col-12" style="padding-bottom:100px;">';
+
+$logo = get_field('logo','options');
     if($logo){
-        echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
+        echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
     }
-    echo '<h1 class="text-white bold" style="">Strategy and<br>Technology Solution</h1>';
-    echo '<h6 class="text-accent-tertiary text-uppercase">where innovation meets impact</h6>';
+
 echo '</div>';
 
-    echo '<div class="col-lg-6 col-md-9">';
-    echo '<p class="text-white lead">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to bring solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
-    // echo '<div class="col-md-9">';
+echo '<div class="container-fluid">';
+echo '<div class="row">';
+
+echo '<div class="col-lg-6">';
+$logo = get_field('logo','options');
+    // if($logo){
+    //     echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
+    // }
+    echo '<h1 class="text-white bold" style="">All-in-one Strategy and Technology Solution</h1>';
+    echo '<h6 class="text-accent-tertiary text-uppercase">where innovation accelerates impact</h6>';
+    echo '<p class="text-white">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to deliver solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding, deepen engagement, and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
     echo '<span class="btn bg-white text-accent contact-us open-modal" id="contact-us" style="">Send Us a Message</span>';
+echo '</div>';
+
+    // echo '<div class="col-lg-6 col-md-9">';
+    // echo '<div class="col-md-9">';
     echo '<div class="modal-content contact-us position-fixed w-100 h-100 z-3">';
     echo '<div class="bg-overlay"></div>';
     echo '<div class="bg-content">';
@@ -150,8 +162,14 @@ echo '</div>';
     echo '</div>';
     // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
     // echo '</div>';
+    // echo '</div>';
+
     echo '</div>';
+    echo '</div>';
+
 echo '</div>';
+
+
 echo '</div>';
 
 // style="height:500px;top:50px;right:0;"

@@ -3,6 +3,7 @@
   --accent-secondary: #0b8ffc;
   --accent-tertiary: #2654fc;
   --accent-blue-light: #0C8EFC;
+  --accent-blue-dark: #0a003b;
 }
 
 html {
@@ -49,6 +50,10 @@ a.bg-accent-secondary:hover {
 
 .bg-accent-tertiary {
   background: var(--accent-tertiary);
+}
+
+.bg-accent-blue-dark {
+  background: var(--accent-blue-dark);
 }
 
 a.bg-accent-tertiary:hover {
