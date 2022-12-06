@@ -140,7 +140,7 @@ $logo = get_field('logo','options');
     //     echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
     // }
     echo '<h1 class="text-white bold" style="">All-in-one Strategy and Technology Solution</h1>';
-    echo '<h6 class="text-accent-tertiary text-uppercase">where innovation accelerates impact</h6>';
+    echo '<h6 class="text-accent-tertiary text-uppercase bold">where innovation accelerates impact</h6>';
     echo '<p class="text-white">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to deliver solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding, deepen engagement, and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
     echo '<span class="btn bg-white text-accent contact-us open-modal" id="contact-us" style="">Contact Us</span>';
 echo '</div>';
