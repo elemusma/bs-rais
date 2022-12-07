@@ -48,12 +48,12 @@ body:not(.home) .img-hero {
     height: 100px;
     /* background: #e95950; */
     transform: rotate(-45deg);
-    left: 20%;
+    right: 20%;
 }
 
 .diagonal-left-line.two {
     height: 125px;
-    left: 25%;
+    right: 25%;
     /* background: #bc2a8d; */
 }
 
