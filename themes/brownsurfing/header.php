@@ -87,7 +87,7 @@ if(is_user_logged_in()){
 // echo '</header>';
 }
 
-echo '<section class="hero position-relative pt-5 pb-5 overflow-h" style="min-height:100vh;">';
+echo '<section class="hero position-relative pt-5 overflow-h" style="">';
 // $globalPlaceholderImg = get_field('global_placeholder_image','options');
 // if(is_page()){
 // if(has_post_thumbnail()){
@@ -165,6 +165,10 @@ echo '</div>';
     // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
     // echo '</div>';
     // echo '</div>';
+
+    echo '<div class="col-12 pl-lg-5 pb-5" style="padding-top:100px;">';
+    echo '<p class="text-white">&copy; 2022 RAISE Partners, LLC</p>';
+    echo '</div>';
 
     echo '</div>';
     echo '</div>';
