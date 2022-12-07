@@ -3,17 +3,17 @@ get_header();
 
 if(is_user_logged_in()){
 // start of intro
-echo '<section class="pt-5 pb-5 position-relative">';
-echo '<div class="container">';
-echo '<div class="row">';
-echo '<div class="col-12">';
+// echo '<section class="pt-5 pb-5 position-relative">';
+// echo '<div class="container">';
+// echo '<div class="row">';
+// echo '<div class="col-12">';
 
 
 
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</section>';
+// echo '</div>';
+// echo '</div>';
+// echo '</div>';
+// echo '</section>';
 // end of intro
 }
 
