@@ -107,8 +107,8 @@ echo '<div class="position-absolute w-100 h-100" style="background:#0a003b;top:0
 
 // echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.25;top:0;left:0;"></div>';
 
-echo '<div class="diagonal-left-line position-absolute bg-accent-secondary" style="top:0px;"></div>';
-echo '<div class="diagonal-left-line two position-absolute bg-accent-secondary" style="top:0px;"></div>';
+// echo '<div class="diagonal-left-line position-absolute bg-accent-secondary" style="top:0px;"></div>';
+// echo '<div class="diagonal-left-line two position-absolute bg-accent-secondary" style="top:0px;"></div>';
 
 // echo '<div class="diagonal-left-line three bg-accent-orange"></div>';
 // echo '<div class="diagonal-bottom-left bg-accent-teal"></div>';
@@ -139,7 +139,7 @@ $logo = get_field('logo','options');
     // if($logo){
     //     echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
     // }
-    echo '<h1 class="text-white bold mb-4" style="">All-in-one<br>Strategy and<br>Technology Solution</h1>';
+    echo '<h1 class="text-white mb-4" style="">Strategy &<br>Technology<br>Solutions for<br>Lasting Value</h1>';
     echo '<h6 class="text-accent-tertiary text-uppercase bold mb-4">where innovation accelerates impact</h6>';
     echo '<div class="col-lg-6 p-0">';
     echo '<p class="text-white">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to deliver solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding, deepen engagement, and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
@@ -167,7 +167,7 @@ echo '</div>';
     // echo '</div>';
 
     echo '<div class="col-12 pl-lg-5 pb-5" style="padding-top:100px;">';
-    echo '<p class="text-white">&copy; 2022 RAISE Partners, LLC</p>';
+    echo '<p class="text-white">&copy; 2022 RAIS3 Partners, LLC</p>';
     echo '</div>';
 
     echo '</div>';
