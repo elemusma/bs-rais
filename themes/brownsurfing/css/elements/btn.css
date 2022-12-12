@@ -16,6 +16,7 @@
     padding: 10px 25px;
     transition: all .25s ease-in-out;
     text-decoration: none;
+    display: inline-block;
 }
 
 .btn-main:hover {

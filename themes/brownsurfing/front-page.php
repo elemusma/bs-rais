@@ -2,19 +2,55 @@
 get_header();
 
 if(is_user_logged_in()){
-// start of intro
-// echo '<section class="pt-5 pb-5 position-relative">';
-// echo '<div class="container">';
-// echo '<div class="row">';
-// echo '<div class="col-12">';
+// start of content plus image
+if(have_rows('builder')):
+    $builderCounter = 0;
+    while(have_rows('builder')): the_row();
+    $builderCounter++;
+$layout = get_sub_field('layout');
 
+    // if($builderCounter == 1){
+    //     echo '<div class="pt-5 pb-5"></div>';
+    // }
 
+if($layout == 'Content + Image'){
+    if(have_rows('content_image')): while(have_rows('content_image')): the_row();
+    $style = get_sub_field('style');
+    $classes = get_sub_field('classes');
+    $img = get_sub_field('image');
 
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
-// echo '</section>';
-// end of intro
+    echo '<section class="position-relative bg-accent-blue-dark text-white ' . $classes . '" style="padding:50px 0;' . $style . '">';
+    echo '<div class="container">';
+    echo '<div class="row">';
+    echo '<div class="col-md-5">';
+        echo get_sub_field('content');
+    echo '</div>';
+    echo '<div class="col-md-7">';
+        echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100']);
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';
+    endwhile; endif;
+} elseif($layout == 'Column Center'){
+    if(have_rows('column_center')): while(have_rows('column_center')): the_row();
+    $style = get_sub_field('style');
+    $classes = get_sub_field('classes');
+    $img = get_sub_field('image');
+
+    echo '<section class="position-relative bg-accent-secondary text-white ' . $classes . '" style="padding:50px 0;' . $style . '">';
+    echo '<div class="container">';
+    echo '<div class="row justify-content-center">';
+    echo '<div class="col-lg-9 text-center">';
+        echo get_sub_field('content');
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';
+endwhile; endif;
+}
+endwhile; endif;
+// end of content plus image
 }
 
 

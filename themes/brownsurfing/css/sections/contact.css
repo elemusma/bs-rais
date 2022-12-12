@@ -14,19 +14,22 @@ input.gform_button.button {
 }
 
 input.gform_button.button:hover {
-  background-color: var(--accent-secondary);
-  border-color: var(--accent-secondary);
+  background-color: var(--accent-blue-dark);
+  border-color: var(--accent-blue-dark);
 }
 
 /* .gform_footer.top_label {
   margin-bottom: -90px !important;
 } */
+.text-center input#gform_submit_button_1 {
+  margin: auto;
+}
 
-input,
+/* input,
 textarea {
   box-shadow: inset 1px 1px 8px #eaeaea !important;
   border: none;
-}
+} */
 
 input[type=file] {
   box-shadow: none !important;
@@ -60,9 +63,9 @@ button[type=submit] {
 }
 
 button[type=submit]:hover {
-  background: var(--accent-secondary);
+  background: var(--accent-blue-dark);
 }
 
 input:focus-visible {
-  outline-color: var(--accent-secondary);
+  outline-color: var(--accent-blue-dark);
 }

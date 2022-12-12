@@ -61,7 +61,7 @@ a.text-black:hover {
 
 html,
 body {
-  font-family: "proxima_novaregular";
+  font-family: 'latoregular';
 }
 
 .light {
@@ -82,9 +82,23 @@ blockquote {
 }
 
 h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: 'latoregular';
+}
+
+h1,
 .h1 {
   font-size: 90px;
-  font-family: 'latoregular';
 }
 
 @media only screen and (max-width:991px) {
