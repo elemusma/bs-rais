@@ -158,6 +158,25 @@ endwhile; endif;
         echo '</section>';
     endif;
     endwhile; endif;
+} elseif($layout == 'Two Columns'){
+    if(have_rows('two_columns')): while(have_rows('two_columns')): the_row();
+        echo '<section class="position-relative bg-accent-blue-dark text-white" style="padding:50px 0;">';
+        echo '<div class="container-fluid">';
+        echo '<div class="row justify-content-center">';
+
+        echo '<div class="col-md-6">';
+        echo get_sub_field('column_left');
+        echo '</div>';
+
+        echo '<div class="col-md-6">';
+        echo get_sub_field('column_right');
+        echo '</div>';
+
+        echo '</div>';
+        echo '</div>';
+        echo '</section>';
+    endwhile; endif;
+
 }
 endwhile; endif;
 
