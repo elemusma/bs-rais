@@ -21,7 +21,7 @@ if($layout == 'Content + Image'){
     $img = get_sub_field('image');
 
     echo '<section class="position-relative bg-accent-blue-dark text-white ' . $classes . '" style="padding:50px 0;' . $style . '">';
-    echo '<div class="container">';
+    echo '<div class="container-fluid">';
     if($imageSide == 'Right'){
         echo '<div class="row">';
         // echo '</div>';
@@ -45,7 +45,7 @@ if($layout == 'Content + Image'){
     $img = get_sub_field('image');
 
     echo '<section class="position-relative bg-accent-blue-dark text-white ' . $classes . '" style="padding:50px 0;' . $style . '">';
-    echo '<div class="container">';
+    echo '<div class="container-fluid">';
     echo '<div class="row justify-content-center">';
     echo '<div class="col-lg-9 text-center">';
         echo get_sub_field('content');
@@ -58,7 +58,7 @@ endwhile; endif;
     if(have_rows('case_studies')): while(have_rows('case_studies')): the_row();
 
     echo '<section class="position-relative bg-accent-blue-dark text-white" style="padding:50px 0;">';
-    echo '<div class="container">';
+    echo '<div class="container-fluid">';
     echo '<div class="row">';
     // echo '<div class="col-lg-">';
     $caseStudies = get_sub_field('posts');
@@ -109,7 +109,7 @@ endwhile; endif;
         $link = get_sub_field('link');
 
         echo '<section class="position-relative bg-accent-blue-dark text-white" style="padding:50px 0;">';
-        echo '<div class="container">';
+        echo '<div class="container-fluid">';
         echo '<div class="row justify-content-center">';
 
         echo '<div class="col-lg-4 col-md-6">';
@@ -142,7 +142,7 @@ endwhile; endif;
     $gallery = get_sub_field('logo_gallery');
     if( $gallery ): 
         echo '<section class="position-relative bg-white text-white" style="padding:50px 0;">';
-        echo '<div class="container">';
+        echo '<div class="container-fluid">';
         echo '<div class="row justify-content-center">';
     foreach( $gallery as $image ):
     echo '<div class="col-lg-3 col-md-4 col-6 col col-portfolio mt-3 mb-3 overflow-h">';
