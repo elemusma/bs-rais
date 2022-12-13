@@ -6,6 +6,10 @@
   color: white;
 }
 
+.text-white.bg-white * {
+  color: initial;
+}
+
 .text-accent,
 a {
   color: var(--accent-primary);
@@ -101,18 +105,28 @@ h1,
   font-size: 90px;
 }
 
+h2 {
+  font-size: 4vw;
+  font-size: 75px;
+}
+
 @media only screen and (max-width:991px) {
 
   h1,
   .h1 {
-    font-size: 70px;
+    font-size: 75px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 55px;
   }
 }
 
-@media only screen and (max-width:767px) {
+/* @media only screen and (max-width:767px) {
 
   h1,
   .h1 {
     font-size: 50px;
   }
-}
+} */
