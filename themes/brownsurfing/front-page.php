@@ -48,9 +48,55 @@ if($layout == 'Content + Image'){
     echo '</div>';
     echo '</section>';
 endwhile; endif;
+} elseif($layout == 'Case Studies'){
+    if(have_rows('case_studies')): while(have_rows('case_studies')): the_row();
+
+    echo '<section class="position-relative bg-accent-blue-dark text-white" style="padding:50px 0;">';
+    echo '<div class="container">';
+    echo '<div class="row">';
+    // echo '<div class="col-lg-">';
+    $caseStudies = get_sub_field('posts');
+    
+    if( $caseStudies ):
+        foreach( $caseStudies as $post ): 
+            // Setup this post for WP functions (variable must be named $post).
+            setup_postdata($post);
+            echo '<a href="' . get_the_permalink() . '" class="col-lg-4 col-case-study">';
+            echo '<div class="img-hover overflow-h">';
+            the_post_thumbnail('full',array('class'=>'w-100','style'=>'height:200px;object-fit:cover;'));
+            echo '</div>';
+            echo '<div class="details pl-3 pr-3">';
+            echo '<span class="h5 bold pt-3 d-block title">' . get_the_title() . '</span>';
+            echo '<div class="small excerpt">';
+            echo get_the_excerpt();
+            echo '</div>';
+            echo '</div>';
+            echo '</a>';
+        endforeach;
+        // Reset the global post object so that the rest of the page works correctly.
+        wp_reset_postdata(); 
+    endif;
+
+    $link = get_sub_field('link');
+if( $link ): 
+$link_url = $link['url'];
+$link_title = $link['title'];
+$link_target = $link['target'] ? $link['target'] : '_self';
+echo '<div class="col-lg-4">';
+echo '<div class="h-100 d-flex align-items-center">';
+echo '<a class="position-relative d-flex align-items-center" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '<span style="width:35px;height:20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white" class="ml-3"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 88L32 208c-17.7 0-32 14.3-32 32l0 32c0 17.7 14.3 32 32 32l288 0 0 88c0 9.6 5.7 18.2 14.5 22z"/></svg></span></a>';
+echo '</div>';
+echo '</div>';
+endif;
+    
+endwhile; endif;
+    // echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';
 }
 endwhile; endif;
-// end of content plus image
+
 }
 
 

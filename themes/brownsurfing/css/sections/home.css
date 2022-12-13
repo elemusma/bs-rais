@@ -1,0 +1,16 @@
+.col-case-study,
+.col-case-study * {
+    transition: all .25s ease-in-out;
+}
+
+.col-case-study:hover {
+    text-decoration: none;
+}
+
+.col-case-study:hover .title {
+    color: var(--accent-secondary);
+}
+
+.col-case-study:hover .details {
+    background: #1A1A1A;
+}
