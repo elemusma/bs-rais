@@ -31,7 +31,7 @@ if($layout == 'Content + Image'){
     echo '<div class="col-lg-5">';
         echo get_sub_field('content');
     echo '</div>';
-    echo '<div class="col-lg-7 pt-lg-0 pt-md-5">';
+    echo '<div class="col-lg-7 pt-lg-0 pt-5">';
         echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-auto']);
     echo '</div>';
     echo '</div>';
@@ -67,7 +67,7 @@ endwhile; endif;
         foreach( $caseStudies as $post ): 
             // Setup this post for WP functions (variable must be named $post).
             setup_postdata($post);
-            echo '<a href="' . get_the_permalink() . '" class="col-lg-4 col-case-study">';
+            echo '<a href="' . get_the_permalink() . '" class="col-lg-4 col-md-6 col-case-study">';
             echo '<div class="img-hover overflow-h">';
             the_post_thumbnail('full',array('class'=>'w-100','style'=>'height:250px;object-fit:cover;'));
             echo '</div>';
@@ -88,7 +88,7 @@ if( $link ):
 $link_url = $link['url'];
 $link_title = $link['title'];
 $link_target = $link['target'] ? $link['target'] : '_self';
-echo '<div class="col-lg-4">';
+echo '<div class="col-lg-4 pt-lg-0 pt-5">';
 echo '<div class="h-100 d-flex align-items-center">';
 echo '<a class="position-relative d-flex align-items-center" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '<span style="width:35px;height:20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white" class="ml-3"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 88L32 208c-17.7 0-32 14.3-32 32l0 32c0 17.7 14.3 32 32 32l288 0 0 88c0 9.6 5.7 18.2 14.5 22z"/></svg></span></a>';
 echo '</div>';
@@ -112,13 +112,13 @@ endwhile; endif;
         echo '<div class="container-fluid">';
         echo '<div class="row justify-content-center">';
 
-        echo '<div class="col-lg-4 col-md-6">';
+        echo '<div class="col-md-4">';
             echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
             echo '<span class="bold d-block">' . $name . '</span>';
             echo '<span class="d-block">' . $title . '</span>';
         echo '</div>';
 
-        echo '<div class="col-lg-8 col-md-6">';
+        echo '<div class="col-md-8">';
         echo '<div class="lead pb-4">';
         echo $content;
         echo '</div>';
