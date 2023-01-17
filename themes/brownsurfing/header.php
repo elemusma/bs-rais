@@ -57,29 +57,33 @@ if(is_user_logged_in()){
 // echo '</div>';
 // echo '</a>';
 // echo '</div>';
-// // echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
-// // echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id="navItems">';
+echo '<div id="navMenuOverlay" class="position-fixed" style="z-index:5;"></div>';
+echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white" style="z-index:6;" id="navItems">';
 
-// // echo '<div class="pt-5 pb-5">';
-// // echo '<div class="close-menu">';
-// // echo '<div>';
-// // echo '<span id="navMenuClose" class="close h1">X</span>';
-// // echo '</div>';
-// // echo '</div>';
-// // echo '<a href="' . home_url() . '">';
+echo '<div class="pt-5 pb-5">';
+echo '<div class="close-menu">';
+echo '<div>';
+echo '<span id="navMenuClose" class="close">X</span>';
+echo '</div>';
+echo '</div>';
+echo '<a href="' . home_url() . '">';
 
-// // $logo = get_field('logo','options'); 
-// // if($logo){
-// // echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
-// // }
+$logo = get_field('logo','options'); 
+if($logo){
+echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
+}
 
-// // echo '</a>';
-// // echo '</div>';
-// // wp_nav_menu(array(
-// // 'menu' => 'primary',
-// // 'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
-// // )); 
-// // echo '</div>';
+echo '</a>';
+echo '</div>';
+wp_nav_menu(array(
+'menu' => 'primary',
+'menu_class'=>'menu list-unstyled mb-0'
+)); 
+
+get_field('website_message','options');
+
+echo '</div>';
+
 // echo '</div>';
 // echo '</div>';
 // echo '</div>';
@@ -122,13 +126,36 @@ echo '<div class="diagonal-bottom-right bg-accent-secondary" style="transform: r
 echo '<div class="d-flex align-items-center position-relative z-2" style="">';
 echo '<div class="hero-content">';
 
-echo '<div class="col-12 pl-lg-5" style="padding-bottom:100px;">';
+echo '<div class="container-fluid">';
+echo '<div class="row" style="padding-bottom:100px;">';
+echo '<div class="col-6 pl-lg-5">';
 
 $logo = get_field('logo','options');
-    if($logo){
-        echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:175px;']);
-    }
+if($logo){
+  echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:175px;']);
+}
 
+echo '</div>';
+
+echo '<div class="col-6 d-flex align-items-center justify-content-end text-right">';
+
+echo '<div class="mr-4">';
+wp_nav_menu(array(
+  'menu' => 'primary',
+  'menu_class'=>'menu d-flex flex-wrap justify-content-center list-unstyled mb-0'
+)); 
+echo '</div>';
+
+echo '<a id="navToggle" class="nav-toggle d-inline-block">';
+echo '<div>';
+echo '<div class="line-1 bg-accent"></div>';
+echo '<div class="line-2 bg-accent"></div>';
+echo '<div class="line-3 bg-accent"></div>';
+echo '</div>';
+echo '</a>';
+
+echo '</div>';
+echo '</div>'; // end of row
 echo '</div>';
 
 echo '<div class="container-fluid">';
@@ -139,10 +166,18 @@ $logo = get_field('logo','options');
     // if($logo){
     //     echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
     // }
-    echo '<h1 class="text-white mb-4" style="">Strategy &<br>Technology<br>Solutions for<br>Lasting Value</h1>';
-    echo '<h6 class="text-accent-tertiary text-uppercase bold mb-4">where innovation accelerates impact</h6>';
+    echo '<h1 class="text-white mb-4" style="">' . get_the_title() . '</h1>';
+    if(get_field('header_subtitle')){
+      echo '<h6 class="text-accent-tertiary text-uppercase bold mb-4">' . get_field('header_subtitle') . '</h6>';
+    }
     echo '<div class="col-lg-6 p-0">';
-    echo '<p class="text-white">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to deliver solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding, deepen engagement, and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
+    // if(have_rows('header_content')): while(have_rows('header_content')): the_row();
+    echo '<div class="text-white">';
+    echo get_field('header_content');
+    echo '</div>';
+    // echo '<p class="text-white">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to deliver solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding, deepen engagement, and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
+    // endwhile; endif;
+
     echo '<span class="btn bg-white text-accent contact-us open-modal" id="contact-us" style="">Contact Us</span>';
   echo '</div>';
 echo '</div>';
@@ -241,9 +276,10 @@ if(!is_front_page()) {
 echo '<div class="container pt-5 pb-5 text-white text-center">';
 echo '<div class="row">';
 echo '<div class="col-md-12">';
-if(is_page() || !is_front_page()){
-echo '<h1 class="">' . get_the_title() . '</h1>';
-} elseif(is_single()){
+// if(!is_page()){
+// echo '<h1 class="">' . get_the_title() . '</h1>';
+// } else
+if(is_single()){
 echo '<h1 class="">' . get_single_post_title() . '</h1>';
 } elseif(is_author()){
 echo '<h1 class="">Author: ' . get_the_author() . '</h1>';

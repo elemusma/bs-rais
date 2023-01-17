@@ -31,7 +31,7 @@ echo '<div class="col-lg-10 col-12 pt-lg-0 pt-md-4">';
 echo '<div class="h-100 d-flex align-items-center justify-content-end">';
     wp_nav_menu(array(
         'menu' => 'footer',
-        'menu_class'=>'d-md-flex flex-wrap justify-content-start list-unstyled text-white text-uppercase mb-0'
+        'menu_class'=>'menu d-md-flex flex-wrap justify-content-start list-unstyled text-white text-uppercase mb-0'
     ));
 echo '</div>';
 echo '</div>';

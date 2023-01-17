@@ -75,9 +75,9 @@ function rais_stylesheets_footer() {
 	if(is_single()){
 		wp_enqueue_script('blog-js', get_theme_file_uri('/js/blog.js'));
 		}
-	if(is_front_page()){
+	// if(is_front_page()){
 		wp_enqueue_script('home-js', get_theme_file_uri('/js/home.js'));
-		}
+		// }
 	}
 	
 add_action('get_footer', 'rais_stylesheets_footer');
