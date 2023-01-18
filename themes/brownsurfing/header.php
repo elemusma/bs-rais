@@ -201,10 +201,6 @@ echo '</div>';
     // echo '</div>';
     // echo '</div>';
 
-    echo '<div class="col-12 pl-lg-5 pb-5" style="padding-top:100px;">';
-    echo '<p class="text-white">&copy; 2022 RAIS3 Partners, LLC</p>';
-    echo '</div>';
-
     echo '</div>';
     echo '</div>';
 

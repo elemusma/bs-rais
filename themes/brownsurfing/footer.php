@@ -5,9 +5,9 @@ echo '<section class="pt-5 pb-5 bg-accent-blue-dark">';
 echo '<div class="container-fluid">';
 echo '<div class="row">';
 
-echo '<div class="col-12 pb-5">';
-echo '<hr class="border-white">';
-echo '</div>';
+// echo '<div class="col-12 pb-5">';
+// echo '<hr class="border-white">';
+// echo '</div>';
 
 echo '<div class="col-lg-2 col-md-3">';
 echo '<a href="' . home_url() . '" class="pl-lg-0" style="padding-left:18px;">';
@@ -22,22 +22,30 @@ echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto']);
 }
 
 echo '</a>';
+
 echo '</div>';
 
 // echo '</div>';
 // echo '<div class="row">';
 
-echo '<div class="col-lg-10 col-12 pt-lg-0 pt-md-4">';
+echo '<div class="col-lg-10 col-12 pt-lg-0 pt-md-4 text-right">';
 echo '<div class="h-100 d-flex align-items-center justify-content-end">';
     wp_nav_menu(array(
         'menu' => 'footer',
         'menu_class'=>'menu d-md-flex flex-wrap justify-content-start list-unstyled text-white text-uppercase mb-0'
     ));
 echo '</div>';
+
 echo '</div>';
 
-echo '<div class="col-12 pt-5">';
-echo '<hr class="border-white">';
+// echo '<div class="col-12 pt-5">';
+// echo '<hr class="border-white">';
+// echo '</div>';
+
+echo '<div class="col-12">';
+
+echo '<p class="text-white mb-0 pt-5">Copyright &copy; 2022 RAIS3 Partners, LLC. All rights reserved.</p>';
+
 echo '</div>';
 
 echo '</div>';

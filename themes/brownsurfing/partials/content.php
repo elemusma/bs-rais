@@ -140,23 +140,28 @@ endwhile; endif;
 } elseif($layout == 'Gallery'){
     if(have_rows('gallery')): while(have_rows('gallery')): the_row();
     $gallery = get_sub_field('logo_gallery');
+    echo '<section class="position-relative bg-white text-white" style="padding:50px 0;">';
+    echo '<div class="container-fluid">';
+    echo '<div class="row">';
+    echo '<div class="col-12 text-center pb-4">';
+        echo get_sub_field('content');
+    echo '</div>';
+    echo '</div>';
     if( $gallery ): 
-        echo '<section class="position-relative bg-white text-white" style="padding:50px 0;">';
-        echo '<div class="container-fluid">';
         echo '<div class="row justify-content-center">';
     foreach( $gallery as $image ):
     echo '<div class="col-lg-3 col-md-4 col-6 col col-portfolio mt-3 mb-3 overflow-h">';
-    echo '<div class="position-relative">';
-    echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set" data-title="' . $image['title'] . '">';
+    echo '<div class="position-relative h-100 d-flex align-items-center justify-content-center">';
+    // echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set" data-title="' . $image['title'] . '">';
     echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-auto'] );
-    echo '</a>';
+    // echo '</a>';
     echo '</div>';
     echo '</div>';
     endforeach; 
     echo '</div>';
-        echo '</div>';
-        echo '</section>';
-    endif;
+endif;
+echo '</div>';
+echo '</section>';
     endwhile; endif;
 } elseif($layout == 'Two Columns'){
     if(have_rows('two_columns')): while(have_rows('two_columns')): the_row();
