@@ -1,5 +1,5 @@
 <?php
-if(is_user_logged_in()){
+// if(is_user_logged_in()){
 echo '<footer>';
 echo '<section class="pt-5 pb-5 bg-accent-blue-dark">';
 echo '<div class="container-fluid">';
@@ -78,7 +78,7 @@ echo '</section>';
 // echo '</section>';
 
 echo '</footer>';
-}
+// }
 
 if(get_field('footer', 'options')) { the_field('footer', 'options'); }
 

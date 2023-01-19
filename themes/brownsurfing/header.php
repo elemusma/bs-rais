@@ -20,7 +20,7 @@ wp_head();
 <body <?php body_class(); ?>>
 <?php
 if(get_field('body','options')) { the_field('body','options'); }
-if(is_user_logged_in()){
+// if(is_user_logged_in()){
 // echo '<div class="blank-space"></div>';
 // echo '<header class="position-relative pt-3 pb-3 z-3 w-100 bg-accent-blue-dark" style="top:0;left:0;">';
 
@@ -89,7 +89,7 @@ echo '</div>';
 // echo '</div>';
 
 // echo '</header>';
-}
+// }
 
 echo '<section class="hero position-relative pt-5 overflow-h" style="">';
 // $globalPlaceholderImg = get_field('global_placeholder_image','options');
