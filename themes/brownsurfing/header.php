@@ -107,7 +107,7 @@ echo '<section class="hero position-relative pt-5 overflow-h" style="">';
     // echo '<video playsinline autoplay loop muted class="w-100 h-100 position-absolute" style="top:0;left:0;object-fit:cover;" src="' . home_url() . '/wp-content/themes/brownsurfing/assets/Rais3-Video.mp4#t=0.5"></video>';
 // }
 
-echo '<div class="position-absolute w-100 h-100" style="background:#0a003b;top:0;left:0;"></div>';
+echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:0;"></div>';
 
 // echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.25;top:0;left:0;"></div>';
 
@@ -158,15 +158,20 @@ echo '</div>';
 echo '</div>'; // end of row
 echo '</div>';
 
+
+
+if(is_front_page()){
 echo '<div class="container-fluid">';
 echo '<div class="row">';
+
+
 
 echo '<div class="col-12 pl-lg-5">';
 $logo = get_field('logo','options');
     // if($logo){
     //     echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
     // }
-    echo '<h1 class="text-white mb-4" style="">' . get_the_title() . '</h1>';
+    echo '<h1 class="mb-4 text-accent" style="">' . get_the_title() . '</h1>';
     if(get_field('header_subtitle')){
       echo '<h6 class="text-accent-tertiary text-uppercase bold mb-4">' . get_field('header_subtitle') . '</h6>';
     }
@@ -178,31 +183,47 @@ $logo = get_field('logo','options');
     // echo '<p class="text-white">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to deliver solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding, deepen engagement, and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
     // endwhile; endif;
 
-    echo '<span class="btn bg-white text-accent contact-us open-modal" id="contact-us" style="">Contact Us</span>';
+    // echo '<span class="btn bg-white text-accent contact-us open-modal" id="contact-us" style="">Contact Us</span>';
   echo '</div>';
 echo '</div>';
 
     // echo '<div class="col-lg-6 col-md-9">';
     // echo '<div class="col-md-9">';
-    echo '<div class="modal-content contact-us position-fixed w-100 h-100 z-3">';
-    echo '<div class="bg-overlay"></div>';
-    echo '<div class="bg-content">';
-    echo '<div class="bg-content-inner">';
-    echo '<div class="close" id="">X</div>';
-    echo '<div>';
-    echo '<h2>Contact Us</h2>';
-    echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
-    echo '</div>';
-    echo '</div>';
 
-    echo '</div>';
-    echo '</div>';
+    // echo '<div class="modal-content contact-us position-fixed w-100 h-100 z-3">';
+    // echo '<div class="bg-overlay"></div>';
+    // echo '<div class="bg-content">';
+    // echo '<div class="bg-content-inner">';
+    // echo '<div class="close" id="">X</div>';
+    // echo '<div>';
+    // echo '<h2>Contact Us</h2>';
     // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
     // echo '</div>';
     // echo '</div>';
 
+    // echo '</div>';
+    // echo '</div>';
+
+    // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
+    // echo '</div>';
+    // echo '</div>';
+
+    echo '</div>'; // end of row
+    echo '</div>'; // end of container
+  } elseif(is_page()){
+    echo '<div class="container-fluid">';
+    echo '<div class="row">';
+    echo '<div class="col-12">';
+    the_post_thumbnail('full',array('class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;'));
+
+    echo '<h1>' . get_the_title() . '</h1>';
+
     echo '</div>';
     echo '</div>';
+    echo '</div>';
+  }
+
+
 
 echo '</div>';
 
