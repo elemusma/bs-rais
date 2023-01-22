@@ -20,43 +20,52 @@ wp_head();
 <body <?php body_class(); ?>>
 <?php
 if(get_field('body','options')) { the_field('body','options'); }
-// if(is_user_logged_in()){
-// echo '<div class="blank-space"></div>';
-// echo '<header class="position-relative pt-3 pb-3 z-3 w-100 bg-accent-blue-dark" style="top:0;left:0;">';
 
-// echo '<div class="nav">';
-// echo '<div class="container-fluid">';
-// echo '<div class="row align-items-center">';
+// echo '<div class="position-fixed w-100" style="
+// top:0;
+// left:0;
+// background: rgb(255,255,255);
+// height: 150px;
+// z-index: 3;
+// margin-top:32px;
+// "></div>';
+echo '<div class="blank-space"></div>';
+echo '<div class="nav position-relative w-100 z-3 pt-3 pb-3 bg-white box-shadow" style="top:0;left:0;">';
 
-// echo '<div class="col-md-3">';
-//     echo '<a href="' . home_url() . '">';
+echo '<div class="container-fluid">';
+echo '<div class="row" style="">';
+echo '<div class="col-6 pl-lg-5">';
 
-//     $logo = get_field('logo','options'); 
-//     if($logo){
-//         echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto']);
-//     }
+echo '<a href="' . home_url() . '">';
+$logo = get_field('logo','options');
+if($logo){
+  echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'h-auto','style'=>'max-width:175px;transition:all 1s ease-in-out;','id'=>'logo-main']);
+}
+echo '</a>';
 
-//     echo wp_get_attachment_image(128,'full','',['class'=>'position-absolute h-100 w-auto','style'=>'top:0;left:25px;opacity:0;','id'=>'logoIcon']);
+echo '</div>';
 
-//     echo '</a>';
-// echo '</div>';
+echo '<div class="col-6 d-flex align-items-center justify-content-end">';
 
+echo '<div class="mr-4">';
+wp_nav_menu(array(
+  'menu' => 'primary',
+  'menu_class'=>'menu d-flex flex-wrap justify-content-center list-unstyled mb-0'
+)); 
+echo '</div>';
 
-// // echo '<div class="col-lg-9 col-md-6 col-7 text-right mobile-hidden">';
-// // wp_nav_menu(array(
-// // 'menu' => 'Main Menu',
-// // 'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-end mb-0 text-white'
-// // ));
-// // echo '</div>';
-// echo '<div class="col-lg-4 col-6 desktop-hidden">';
-// echo '<a id="navToggle" class="nav-toggle">';
-// echo '<div>';
-// echo '<div class="line-1 bg-accent"></div>';
-// echo '<div class="line-2 bg-accent"></div>';
-// echo '<div class="line-3 bg-accent"></div>';
-// echo '</div>';
-// echo '</a>';
-// echo '</div>';
+echo '<a id="navToggle" class="nav-toggle d-inline-block">';
+echo '<div>';
+echo '<div class="line-1 bg-accent"></div>';
+echo '<div class="line-2 bg-accent"></div>';
+echo '<div class="line-3 bg-accent"></div>';
+echo '</div>';
+echo '</a>';
+
+echo '</div>';
+echo '</div>'; // end of row
+echo '</div>';
+
 echo '<div id="navMenuOverlay" class="position-fixed" style="z-index:5;"></div>';
 echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white" style="z-index:6;" id="navItems">';
 
@@ -83,84 +92,26 @@ wp_nav_menu(array(
 get_field('website_message','options');
 
 echo '</div>';
+echo '</div>';
 
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
 
-// echo '</header>';
-// }
 
-echo '<section class="hero position-relative pt-5 overflow-h" style="">';
-// $globalPlaceholderImg = get_field('global_placeholder_image','options');
-// if(is_page()){
-// if(has_post_thumbnail()){
-// the_post_thumbnail('full', array('class' => 'w-100 h-100 bg-img position-absolute'));
-// } else {
-// echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
-// }
-// } else {
-// echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
-// }
-
-// if(is_front_page()) {
-    // echo '<video playsinline autoplay loop muted class="w-100 h-100 position-absolute" style="top:0;left:0;object-fit:cover;" src="' . home_url() . '/wp-content/themes/brownsurfing/assets/Rais3-Video.mp4#t=0.5"></video>';
-// }
-
-echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:0;"></div>';
-
-// echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.25;top:0;left:0;"></div>';
-
-// echo '<div class="diagonal-left-line position-absolute bg-accent-secondary" style="top:0px;"></div>';
-// echo '<div class="diagonal-left-line two position-absolute bg-accent-secondary" style="top:0px;"></div>';
-
-// echo '<div class="diagonal-left-line three bg-accent-orange"></div>';
-// echo '<div class="diagonal-bottom-left bg-accent-teal"></div>';
-// echo '<div class="diagonal-bottom-right bg-accent-teal"></div>';
-
-echo '<div class="diagonal-bottom-left bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 73.50px);"></div>';
-echo '<div class="diagonal-bottom-right bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 73.50px);"></div>';
-
-// echo '<div class="text-white hero-content position-relative z-1 d-flex" style="">';
-// echo '<h6>' . get_the_field('pretitle') . '</h6>';
-echo '<div class="d-flex align-items-center position-relative z-2" style="">';
-echo '<div class="hero-content">';
-
-echo '<div class="container-fluid">';
-echo '<div class="row" style="padding-bottom:100px;">';
-echo '<div class="col-6 pl-lg-5">';
-
-$logo = get_field('logo','options');
-if($logo){
-  echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:175px;']);
+echo '<section class="hero position-relative overflow-h bg-light" style="">';
+if(is_page() && !is_front_page()){
+  the_post_thumbnail('full',array('class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;'));
+  // echo '<div class="position-absolute w-100 h-100 bg-white" style="opacity:.25;top:0;left:0;"></div>';
 }
 
-echo '</div>';
-
-echo '<div class="col-6 d-flex align-items-center justify-content-end text-right">';
-
-echo '<div class="mr-4">';
-wp_nav_menu(array(
-  'menu' => 'primary',
-  'menu_class'=>'menu d-flex flex-wrap justify-content-center list-unstyled mb-0'
-)); 
-echo '</div>';
-
-echo '<a id="navToggle" class="nav-toggle d-inline-block">';
-echo '<div>';
-echo '<div class="line-1 bg-accent"></div>';
-echo '<div class="line-2 bg-accent"></div>';
-echo '<div class="line-3 bg-accent"></div>';
-echo '</div>';
-echo '</a>';
-
-echo '</div>';
-echo '</div>'; // end of row
-echo '</div>';
-
+if(is_front_page()){
+  echo '<div class="diagonal-bottom-left bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 0px);"></div>';
+  echo '<div class="diagonal-bottom-right bg-accent-secondary" style="transform: rotate(0deg) translate(100px, 0px);"></div>';
+}
 
 
 if(is_front_page()){
+  echo '<div class="position-relative pt-5 pb-5" style="">';
+  // echo '<div class="hero-content">';
+
 echo '<div class="container-fluid">';
 echo '<div class="row">';
 
@@ -168,56 +119,40 @@ echo '<div class="row">';
 
 echo '<div class="col-12 pl-lg-5">';
 $logo = get_field('logo','options');
-    // if($logo){
-    //     echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']);
-    // }
+    
     echo '<h1 class="mb-4 text-accent" style="">' . get_the_title() . '</h1>';
     if(get_field('header_subtitle')){
       echo '<h6 class="text-accent-tertiary text-uppercase bold mb-4">' . get_field('header_subtitle') . '</h6>';
     }
     echo '<div class="col-lg-6 p-0">';
-    // if(have_rows('header_content')): while(have_rows('header_content')): the_row();
+
     echo '<div class="text-white">';
     echo get_field('header_content');
     echo '</div>';
-    // echo '<p class="text-white">We partner with leading social enterprises, nonprofits, corporations, and purpose-driven leaders to deliver solutions that tackle today\'s urgent challenges. RAIS3 is a team of strategists who match ingenuity with technology to unlock new funding, deepen engagement, and generate sustainable and scalable impact for the causes and communities our clients champion. From strategy to planning, implementation to execution, we bring expertise to realize exceptional value and transformative impact.</p>';
-    // endwhile; endif;
-
-    // echo '<span class="btn bg-white text-accent contact-us open-modal" id="contact-us" style="">Contact Us</span>';
+    
+    
   echo '</div>';
 echo '</div>';
 
-    // echo '<div class="col-lg-6 col-md-9">';
-    // echo '<div class="col-md-9">';
-
-    // echo '<div class="modal-content contact-us position-fixed w-100 h-100 z-3">';
-    // echo '<div class="bg-overlay"></div>';
-    // echo '<div class="bg-content">';
-    // echo '<div class="bg-content-inner">';
-    // echo '<div class="close" id="">X</div>';
-    // echo '<div>';
-    // echo '<h2>Contact Us</h2>';
-    // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
-    // echo '</div>';
-    // echo '</div>';
-
-    // echo '</div>';
-    // echo '</div>';
-
-    // echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
-    // echo '</div>';
-    // echo '</div>';
 
     echo '</div>'; // end of row
     echo '</div>'; // end of container
+
+    // echo '</div>';
+
+
+echo '</div>';
+
   } elseif(is_page()){
+    echo '<div style="padding:600px 0px 50px;">';
     echo '<div class="container-fluid">';
     echo '<div class="row">';
-    echo '<div class="col-12">';
-    the_post_thumbnail('full',array('class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;'));
-
-    echo '<h1>' . get_the_title() . '</h1>';
-
+    echo '<div class="col-12 text-center text-white">';
+    
+    
+    echo '<h1 class="text-shadow">' . get_the_title() . '</h1>';
+    
+    echo '</div>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
@@ -225,14 +160,9 @@ echo '</div>';
 
 
 
-echo '</div>';
 
 
-echo '</div>';
-
-// style="height:500px;top:50px;right:0;"
-// Layer_2
-
+if(is_front_page()){
 echo '<div class="position-absolute z-1 d-inline-block" style="top:50%;transform:translate(0px, -50%);">';
 echo '<?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 702.2 628.75" style="height:500px;top:50px;right:0;">
@@ -280,22 +210,16 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
   </g>
 </svg>';
 echo '</div>';
-
-// echo '</div>';
-// $backgroundImage = get_field('background_image');
-// echo '<div class="el" id="elDiv" style="pointer-events:none;background:url(' . wp_get_attachment_image_url($backgroundImage['id'],'full') . ');background-position:35% 25%;"></div>';
+}
 
 
 
-
-
-if(!is_front_page()) {
+if(!is_front_page() && !is_page()) {
 echo '<div class="container pt-5 pb-5 text-white text-center">';
 echo '<div class="row">';
 echo '<div class="col-md-12">';
-// if(!is_page()){
-// echo '<h1 class="">' . get_the_title() . '</h1>';
-// } else
+
+
 if(is_single()){
 echo '<h1 class="">' . get_single_post_title() . '</h1>';
 } elseif(is_author()){

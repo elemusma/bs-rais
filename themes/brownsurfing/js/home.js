@@ -3,8 +3,8 @@ diagonalBottomRight = document.querySelector('.diagonal-bottom-right');
 diagonalLeftLineThree = document.querySelector('.diagonal-left-line.three');
 // console.log(diagonalBottomLeft);
 
-diagonalBottomLeft.style.transform = "rotate(0deg) translate(100px,-16.5px)";
-diagonalBottomRight.style.transform = "rotate(0deg) translate(100px,-16.5px)";
+diagonalBottomLeft.style.transform = "rotate(0deg) translate(100px,0px)";
+diagonalBottomRight.style.transform = "rotate(0deg) translate(100px,0px)";
 
 function parallaxEffect() {
     scrollLength = window.scrollY;
@@ -15,6 +15,6 @@ function parallaxEffect() {
     // console.log(diagonalBottomLeftPositionScroll);
     diagonalBottomLeft.style.transform = "rotate(0deg) translate(100px, " + diagonalBottomLeftPositionScroll + "px)";
     diagonalBottomRight.style.transform = "rotate(0deg) translate(100px, " + diagonalBottomLeftPositionScroll + "px)";
-    diagonalLeftLineThree.style.transform = "rotate(45deg) translate(0px, " + diagonalBottomLeftPositionScrollLess + "px)";
+    // diagonalLeftLineThree.style.transform = "rotate(45deg) translate(0px, " + diagonalBottomLeftPositionScrollLess + "px)";
 }
 window.addEventListener('scroll', parallaxEffect);
