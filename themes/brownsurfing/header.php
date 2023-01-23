@@ -118,17 +118,16 @@ echo '<div class="row">';
 
 
 echo '<div class="col-12 pl-lg-5">';
-$logo = get_field('logo','options');
     
-    echo '<h1 class="mb-4 text-accent" style="">' . get_the_title() . '</h1>';
+    echo '<h1 class="mb-4 text-accent" style="font-weight:900;">' . get_the_title() . '</h1>';
     if(get_field('header_subtitle')){
       echo '<h6 class="text-accent-tertiary text-uppercase bold mb-4">' . get_field('header_subtitle') . '</h6>';
     }
     echo '<div class="col-lg-6 p-0">';
 
-    echo '<div class="text-white">';
+    // echo '<div class="text-white">';
     echo get_field('header_content');
-    echo '</div>';
+    // echo '</div>';
     
     
   echo '</div>';
@@ -163,7 +162,7 @@ echo '</div>';
 
 
 if(is_front_page()){
-echo '<div class="position-absolute z-1 d-inline-block" style="top:50%;transform:translate(0px, -50%);">';
+echo '<div class="position-absolute z-1 d-inline-block" style="top:50%;transform:translate(0px, -50%);pointer-events:none;">';
 echo '<?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 702.2 628.75" style="height:500px;top:50px;right:0;">
   <defs>

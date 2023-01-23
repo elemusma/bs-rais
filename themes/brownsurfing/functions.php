@@ -10,6 +10,7 @@ wp_enqueue_style('popup', get_theme_file_uri('/css/sections/popup.css'));
 wp_enqueue_style('hero', get_theme_file_uri('/css/sections/hero.css'));
 wp_enqueue_style('contact', get_theme_file_uri('/css/sections/contact.css'));
 wp_enqueue_style('img', get_theme_file_uri('/css/elements/img.css'));
+wp_enqueue_style('accordion', get_theme_file_uri('/css/sections/accordion.css'));
 
 if(is_front_page()){
 	wp_enqueue_style('home', get_theme_file_uri('/css/sections/home.css'));
@@ -71,6 +72,7 @@ function rais_stylesheets_footer() {
 	wp_enqueue_script('nav-js', get_theme_file_uri('/js/nav.js'));
 	wp_enqueue_script('popup-js', get_theme_file_uri('/js/popup.js'));
 	wp_enqueue_script('logo-js', get_theme_file_uri('/js/logo.js'));
+	wp_enqueue_script('accordion-js', get_theme_file_uri('/js/accordion.js'));
 	
 	if(is_single()){
 		wp_enqueue_script('blog-js', get_theme_file_uri('/js/blog.js'));
@@ -185,7 +187,7 @@ function btn_shortcode( $atts, $content = null ) {
 	
 	// return '<a class="btn-accent-primary" href="' . esc_attr($a['href']) . '" target="' . esc_attr($a['target']) . '">' . $content . '</a>';
 	
-	return '<a class="btn-main mt-4 ' . esc_attr($a['class']) . '" href="' . esc_attr($a['href']) . '" style="' . esc_attr($a['style']) . '" target="' . esc_attr($a['target']) . '">' . $content . '</a>';
+	return '<a class="button ' . esc_attr($a['class']) . '" href="' . esc_attr($a['href']) . '" style="' . esc_attr($a['style']) . '" target="' . esc_attr($a['target']) . '">' . $content . ' ' . wp_get_attachment_image(219,'full','',['class'=>'','style'=>'']) . '</a>';
 	
 	// [button href="#" class="btn btn-lg btn-default" style="font-weight:bold; margin-top:50px; background-color: #999"]Learn More[/button]
 	

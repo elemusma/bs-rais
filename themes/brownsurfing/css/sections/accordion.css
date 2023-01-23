@@ -1,0 +1,19 @@
+.accordion h3 {
+    margin: 9px 0;
+    cursor: pointer;
+}
+
+.accordion .accordion-content {
+    height: 0;
+    /* opacity: 0; */
+    /* margin: 0 !important; */
+    overflow: hidden;
+    pointer-events: none;
+    transition: all .5s ease;
+}
+
+/* .accordion.open p {
+    opacity: 1;
+    margin: 0 !important;
+    pointer-events: all;
+} */
